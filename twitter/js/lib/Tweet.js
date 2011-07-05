@@ -3,9 +3,20 @@
 //
 // @author Armagan Amcalar <armagan@tart.com.tr>
 
-var Tweet = function(user, body){
+/**
+ * Tweet value object
+ * @param {string} userId User id that this tweet belongs to.
+ * @param {string} body Body of the tweet.
+ * @return {boolean} Returns if a successful tweet is created.
+ */
+var Tweet = function(userId, body){
     this.id = tart.getUId();
-    this.user = user;
-    this.body = body;
+    this.userId = userId;
     this.time = tart.randomTime();
+
+    if (body.length <= 140)
+        this.body = body;
+    else
+        return false;
+    return true;
 }
