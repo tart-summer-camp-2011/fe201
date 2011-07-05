@@ -54,6 +54,7 @@ class TweetModel {
 }
 
 class DirectMessage {
+	+ id : Number
 	+ fromId : Number
 	+ toId : Number
 	+ body : string
