@@ -28,4 +28,31 @@ class UserModel {
 class Session {
 	+ userId : Number
 }
+
+class FollowManager {
+	+ follow(follower : User, following : User)
+	+ getFollowingByUserId(userId : Number) : User[]
+	+ getFollowersByUserId(userId : Number) : User[]
+}
+
+class Profile {
+	+ id : Number
+	+ user : User
+	+ bio : string
+	+ photoUrl : string
+	+ location : string
+}
+
+class ProfileModel {
+	+ createProfile(bio : string, photoUrl : string, location : string)
+	+ getProfileByUserId(userId : Number) : Profile
+	+ editProfileByUserId(userId : Number, newProfile : Profile)
+}
+
+class TweetModel {
+	+ postTweet(user : User, body : Body)
+	+ removeTweet(tweetId : Number)
+	+ getTweetsByUserId(userId : Number) : Tweet[]
+}
+
 @enduml
