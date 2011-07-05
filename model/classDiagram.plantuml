@@ -28,7 +28,7 @@ class Session {
 }
 
 class FollowManager {
-	+ follow(followerId : Number, followingId : Number)
+	+ createFollow(followerId : Number, followingId : Number)
 	+ getFollowingByUserId(userId : Number) : User[]
 	+ getFollowersByUserId(userId : Number) : User[]
 }
