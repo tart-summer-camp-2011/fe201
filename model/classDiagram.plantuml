@@ -5,8 +5,6 @@ class User {
 	+ id : Number
 	+ username : string
 	+ password : string
-	+ profile : Profile
-	+ tweets : Tweet[]
 }
 
 class Tweet {
@@ -72,9 +70,9 @@ UserModel o-- Session
 DirectMessageModel o-- DirectMessage
 ProfileModel o-- Profile
 TweetModel o-- Tweet
-User -- Session
-User -- Tweet
-User -- Profile
-User -- DirectMessage
-FollowManager -- User
+User .. Session
+User .. Tweet
+User .. Profile
+User .. DirectMessage
+FollowManager .. User
 @enduml
