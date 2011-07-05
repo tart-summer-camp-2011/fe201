@@ -2,10 +2,8 @@
 <html>
 <head>
     <title>FE201 Twitter setup</title>
-    <script type="text/javascript" src="js/jquery-1.6.2.js"></script>
-    <script type="text/javascript" src="js/Bootstrapper.js"></script>
-    <script type="text/javascript" src="js/inheritance.js"></script>
-    <script type="text/javascript" src="js/localStorage.js"></script>
+    <script type="text/javascript" src="third_party/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="third_party/tart.js"></script>
     <script type="text/javascript">
         var session = localStorage.getItem("session"),
                 userModel = new fe201.userModel(),
@@ -43,7 +41,7 @@
                 ];
 
         for (var i = 0, l = userData.length; i < l; i++) {
-            var user = userData[i], size = Math.round(Math.random() * 5);
+            var user = userData[i], size = Math.round(Math.random() * 5) + 2;
 
             userModel.createUser(user.username, user.password, user.email);
 
