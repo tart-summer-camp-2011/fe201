@@ -61,7 +61,7 @@ class DirectMessage {
 }
 
 class DirectMessageModel {
-	+ sendDirectMessage(fromId : Number, toId : Number, body : string)
+	+ sendDirectMessage(from : User, to : User, body : string)
 	+ getInboxByUserId(userId : Number) : DirectMessage[]
 	+ getSentByUserId(userId : Number) : DirectMessage[]
 }
