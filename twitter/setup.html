@@ -44,7 +44,7 @@
             userModel.createUser(user.username, user.password, user.email);
 
             for (var j = 0; j < size; j++) {
-                tweetModel.post(user, tart.LoremIpsum());
+                tweetModel.postTweet(user, tart.LoremIpsum());
             }
         }
 
