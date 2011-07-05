@@ -54,23 +54,23 @@
         users.ericadams = userModel.getUserByUsername("ericadams");
         users.jackshephard = userModel.getUserByUsername("jackshephard");
 
-        followManager.follow(users.bulentersoy, users.ericadams);
-        followManager.follow(users.bulentersoy, users.jackshephard);
+        followManager.createFollow(users.bulentersoy, users.ericadams);
+        followManager.createFollow(users.bulentersoy, users.jackshephard);
 
-        followManager.follow(users.hilalcebeci, users.ibrahimtatlises);
-        followManager.follow(users.hilalcebeci, users.ericadams);
-        followManager.follow(users.hilalcebeci, users.bulentersoy);
+        followManager.createFollow(users.hilalcebeci, users.ibrahimtatlises);
+        followManager.createFollow(users.hilalcebeci, users.ericadams);
+        followManager.createFollow(users.hilalcebeci, users.bulentersoy);
 
-        followManager.follow(users.ibrahimtatlises, users.bulentersoy);
-        followManager.follow(users.ibrahimtatlises, users.hilalcebeci);
-        followManager.follow(users.ibrahimtatlises, users.jackshephard);
+        followManager.createFollow(users.ibrahimtatlises, users.bulentersoy);
+        followManager.createFollow(users.ibrahimtatlises, users.hilalcebeci);
+        followManager.createFollow(users.ibrahimtatlises, users.jackshephard);
 
-        followManager.follow(users.ericadams, users.hilalcebeci);
-        followManager.follow(users.ericadams, users.ibrahimtatlises);
+        followManager.createFollow(users.ericadams, users.hilalcebeci);
+        followManager.createFollow(users.ericadams, users.ibrahimtatlises);
 
-        followManager.follow(users.jackshephard, users.ibrahimtatlises);
-        followManager.follow(users.jackshephard, users.hilalcebeci);
-        followManager.follow(users.jackshephard, users.bulentersoy);
+        followManager.createFollow(users.jackshephard, users.ibrahimtatlises);
+        followManager.createFollow(users.jackshephard, users.hilalcebeci);
+        followManager.createFollow(users.jackshephard, users.bulentersoy);
 
         directMessageModel.sendDirectMessage(users.bulentersoy, users.ericadams, tart.LoremIpsum());
         directMessageModel.sendDirectMessage(users.bulentersoy, users.jackshephard, tart.LoremIpsum());
