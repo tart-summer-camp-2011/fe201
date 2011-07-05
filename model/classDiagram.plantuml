@@ -28,7 +28,7 @@ class Session {
 }
 
 class FollowManager {
-	+ createFollow(followerId : Number, followingId : Number)
+	+ createFollow(follower : User, following : User)
 	+ getFollowingByUserId(userId : Number) : User[]
 	+ getFollowersByUserId(userId : Number) : User[]
 }
@@ -67,6 +67,7 @@ class DirectMessageModel {
 }
 
 class Follow {
+	+ id : Number
 	+ followerId : Number
 	+ followingId : Number
 }
