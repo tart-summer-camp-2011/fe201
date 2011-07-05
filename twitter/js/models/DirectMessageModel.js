@@ -2,3 +2,11 @@
 // Techinox Commercial License
 //
 // @author Armagan Amcalar <armagan@tart.com.tr>
+
+var DirectMessageModel = function() {
+
+};
+
+DirectMessageModel.prototype.createDirectMessage = function(from, to, body){
+    
+}
