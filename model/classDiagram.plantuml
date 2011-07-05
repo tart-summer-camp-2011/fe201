@@ -9,7 +9,7 @@ class User {
 
 class Tweet {
 	+ id : Number
-	+ user : string
+	+ userId : Number
 	+ body : string
 	+ time : Number
 }
@@ -28,41 +28,46 @@ class Session {
 }
 
 class FollowManager {
-	+ follow(follower : User, following : User)
+	+ follow(followerId : Number, followingId : Number)
 	+ getFollowingByUserId(userId : Number) : User[]
 	+ getFollowersByUserId(userId : Number) : User[]
 }
 
 class Profile {
 	+ id : Number
-	+ user : User
+	+ userId : Number
 	+ bio : string
 	+ photoUrl : string
 	+ location : string
 }
 
 class ProfileModel {
-	+ createProfile(user: User, bio : string, photoUrl : string, location : string)
+	+ createProfile(bio : string, photoUrl : string, location : string)
 	+ getProfileByUserId(userId : Number) : Profile
 	+ editProfileByUserId(userId : Number, newProfile : Profile)
 }
 
 class TweetModel {
-	+ postTweet(user : User, body : Body)
+	+ postTweet(userId : Number, body : string)
 	+ removeTweet(tweetId : Number)
 	+ getTweetsByUserId(userId : Number) : Tweet[]
 }
 
 class DirectMessage {
-	+ from : User
-	+ to : User
+	+ fromId : Number
+	+ toId : Number
 	+ body : string
 }
 
 class DirectMessageModel {
-	+ sendDirectMessage(from : User, to : User, body : string)
+	+ sendDirectMessage(fromId : Number, toId : Number, body : string)
 	+ getInboxByUserId(userId : Number) : DirectMessage[]
 	+ getSentByUserId(userId : Number) : DirectMessage[]
+}
+
+class Follow {
+	+ followerId : Number
+	+ followingId : Number
 }
 
 UserModel o-- User
@@ -70,9 +75,11 @@ UserModel o-- Session
 DirectMessageModel o-- DirectMessage
 ProfileModel o-- Profile
 TweetModel o-- Tweet
+FollowManager o-- Follow
 User .. Session
 User .. Tweet
 User .. Profile
 User .. DirectMessage
+Follow .. User
 FollowManager .. User
 @enduml
