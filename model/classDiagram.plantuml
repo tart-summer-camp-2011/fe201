@@ -48,7 +48,7 @@ class ProfileModel {
 }
 
 class TweetModel {
-	+ postTweet(userId : Number, body : string)
+	+ postTweet(user : User, body : string)
 	+ removeTweet(tweetId : Number)
 	+ getTweetsByUserId(userId : Number) : Tweet[]
 }
