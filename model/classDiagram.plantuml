@@ -55,4 +55,16 @@ class TweetModel {
 	+ getTweetsByUserId(userId : Number) : Tweet[]
 }
 
+class DirectMessage {
+	+ from : User
+	+ to : User
+	+ body : string
+}
+
+class DirectMessageModel {
+	+ sendDirectMessage(from : User, to : User, body : string)
+	+ getInboxByUserId(userId : Number) : DirectMessage[]
+	+ getSentByUserId(userId : Number) : DirectMessage[]
+}
+
 @enduml
