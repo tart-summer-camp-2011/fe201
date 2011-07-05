@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FE201 Twitter setup</title>
+    <script type="text/javascript" src="js/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="js/Bootstrapper.js"></script>
+    <script type="text/javascript" src="js/inheritance.js"></script>
+    <script type="text/javascript" src="js/localStorage.js"></script>
+    <script type="text/javascript">
+        var session = localStorage.getItem("session"),
+                userModel = new fe201.userModel(),
+                tweetModel = new fe201.tweetModel(),
+                directMessageModel = new directMessageModel(),
+                followManager = new fe201.followManager(),
+                user = userModel.getUserById(session.userId),
+                users = {},
+                userData = [
+                    {
+                        username: "bulentersoy",
+                        password: "bulentersoy",
+                        email: "bulent@ersoy.com"
+                    },
+                    {
+                        username: "hilalcebeci",
+                        password: "hilalcebeci",
+                        email: "hilal@cebeci.com"
+                    },
+                    {
+                        username: "ibrahimtatlises",
+                        password: "ibrahimtatlises",
+                        email: "ibrahim@tatlises.com"
+                    },
+                    {
+                        username: "ericadams",
+                        password: "ericadams",
+                        email: "eric@adams.com"
+                    },
+                    {
+                        username: "jackshephard",
+                        password: "jackshephard",
+                        email: "jack@shephard.com"
+                    }
+                ];
+
+        for (var i = 0, l = userData.length; i < l; i++) {
+            var user = userData[i], size = Math.round(Math.random() * 5);
+
+            userModel.createUser(user.username, user.password, user.email);
+
+            for (var j = 0; j < size; j++) {
+                tweetModel.post(user, tart.LoremIpsum());
+            }
+        }
+
+        users.bulentersoy = userModel.getUserByUsername("bulentersoy");
+        users.hilalcebeci = userModel.getUserByUsername("hilalcebeci");
+        users.ibrahimtatlises = userModel.getUserByUsername("ibrahimtatlises");
+        users.ericadams = userModel.getUserByUsername("ericadams");
+        users.jackshephard = userModel.getUserByUsername("jackshephard");
+
+        followManager.follow(users.bulentersoy, users.ericadams);
+        followManager.follow(users.bulentersoy, users.jackshephard);
+        
+        followManager.follow(users.hilalcebeci, users.ibrahimtatlises);
+        followManager.follow(users.hilalcebeci, users.ericadams);
+        followManager.follow(users.hilalcebeci, users.bulentersoy);
+        
+        followManager.follow(users.ibrahimtatlises, users.bulentersoy);
+        followManager.follow(users.ibrahimtatlises, users.hilalcebeci);
+        followManager.follow(users.ibrahimtatlises, users.jackshephard);
+        
+        followManager.follow(users.ericadams, users.hilalcebeci);
+        followManager.follow(users.ericadams, users.ibrahimtatlises);
+        
+        followManager.follow(users.jackshephard, users.ibrahimtatlises);
+        followManager.follow(users.jackshephard, users.hilalcebeci);
+        followManager.follow(users.jackshephard, users.bulentersoy);
+
+        directMessageModel.sendDirectMessage(users.bulentersoy, users.ericadams, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.bulentersoy, users.jackshephard, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.bulentersoy, users.jackshephard, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.bulentersoy, users.hilalcebeci, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.bulentersoy, users.hilalcebeci, tart.LoremIpsum());
+
+        directMessageModel.sendDirectMessage(users.hilalcebeci, users.ericadams, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.hilalcebeci, users.jackshephard, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.hilalcebeci, users.bulentersoy, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.hilalcebeci, users.ericadams, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.hilalcebeci, users.ericadams, tart.LoremIpsum());
+
+        directMessageModel.sendDirectMessage(users.ericadams, users.hilalcebeci, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ericadams, users.ibrahimtatlises, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ericadams, users.hilalcebeci, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ericadams, users.jackshephard, tart.LoremIpsum());
+
+        directMessageModel.sendDirectMessage(users.jackshephard, users.ericadams, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.jackshephard, users.bulentersoy, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.jackshephard, users.ibrahimtatlises, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.jackshephard, users.ibrahimtatlises, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.jackshephard, users.ibrahimtatlises, tart.LoremIpsum());
+
+        directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.hilalcebeci, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.bulentersoy, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.hilalcebeci, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.hilalcebeci, tart.LoremIpsum());
+        directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.ericadams, tart.LoremIpsum());
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
