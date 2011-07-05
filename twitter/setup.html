@@ -2,15 +2,13 @@
 <html>
 <head>
     <title>FE201 Twitter setup</title>
-    <script type="text/javascript" src="third_party/jquery-1.6.2.js"></script>
-    <script type="text/javascript" src="third_party/tart.js"></script>
+    <script type="text/javascript" src="js/third_party/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="js/third_party/tart.js"></script>
     <script type="text/javascript">
-        var session = localStorage.getItem("session"),
-                userModel = new fe201.userModel(),
+        var userModel = new fe201.userModel(),
                 tweetModel = new fe201.tweetModel(),
                 directMessageModel = new directMessageModel(),
                 followManager = new fe201.followManager(),
-                user = userModel.getUserById(session.userId),
                 users = {},
                 userData = [
                     {
@@ -58,18 +56,18 @@
 
         followManager.follow(users.bulentersoy, users.ericadams);
         followManager.follow(users.bulentersoy, users.jackshephard);
-        
+
         followManager.follow(users.hilalcebeci, users.ibrahimtatlises);
         followManager.follow(users.hilalcebeci, users.ericadams);
         followManager.follow(users.hilalcebeci, users.bulentersoy);
-        
+
         followManager.follow(users.ibrahimtatlises, users.bulentersoy);
         followManager.follow(users.ibrahimtatlises, users.hilalcebeci);
         followManager.follow(users.ibrahimtatlises, users.jackshephard);
-        
+
         followManager.follow(users.ericadams, users.hilalcebeci);
         followManager.follow(users.ericadams, users.ibrahimtatlises);
-        
+
         followManager.follow(users.jackshephard, users.ibrahimtatlises);
         followManager.follow(users.jackshephard, users.hilalcebeci);
         followManager.follow(users.jackshephard, users.bulentersoy);
@@ -102,7 +100,7 @@
         directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.hilalcebeci, tart.LoremIpsum());
         directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.hilalcebeci, tart.LoremIpsum());
         directMessageModel.sendDirectMessage(users.ibrahimtatlises, users.ericadams, tart.LoremIpsum());
-        
+
     </script>
 </head>
 <body>

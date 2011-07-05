@@ -2,8 +2,13 @@
 <html>
 <head>
     <title>FE201</title>
-    <script type="text/javascript" src="third_party/jquery-1.6.2.js"></script>
-    <script type="text/javascript" src="third_party/tart.js"></script>
+    <script type="text/javascript" src="js/third_party/jquery-1.6.2.js"></script>
+    <script type="text/javascript" src="js/third_party/tart.js"></script>
+    <script type="text/javascript">
+        var session = localStorage.getItem("session"),
+                user = userModel.getUserById(session.userId);
+
+    </script>
 </head>
 <body>
 
