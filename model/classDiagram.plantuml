@@ -1,0 +1,31 @@
+@startuml
+title Twitter
+
+class User {
+	+ id : Number
+	+ username : string
+	+ password : string
+	+ profile : Profile
+	+ tweets : Tweet[]
+}
+
+class Tweet {
+	+ id : Number
+	+ user : string
+	+ body : string
+	+ time : Number
+}
+
+class UserModel {
+	+ createUser(username : string, password: string, email : string) : User
+	+ removeUser(userId : Number)
+	+ login(username : string, password : string)
+	+ logout()
+	+ getUserById(userId : Number)
+	+ getUserByUsername(username : string)
+}
+
+class Session {
+	+ userId : Number
+}
+@enduml
