@@ -67,4 +67,14 @@ class DirectMessageModel {
 	+ getSentByUserId(userId : Number) : DirectMessage[]
 }
 
+UserModel o-- User
+UserModel o-- Session
+DirectMessageModel o-- DirectMessage
+ProfileModel o-- Profile
+TweetModel o-- Tweet
+User -- Session
+User -- Tweet
+User -- Profile
+User -- DirectMessage
+FollowManager -- User
 @enduml
