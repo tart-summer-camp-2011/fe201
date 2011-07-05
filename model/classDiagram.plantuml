@@ -44,7 +44,7 @@ class Profile {
 }
 
 class ProfileModel {
-	+ createProfile(bio : string, photoUrl : string, location : string)
+	+ createProfile(user: User, bio : string, photoUrl : string, location : string)
 	+ getProfileByUserId(userId : Number) : Profile
 	+ editProfileByUserId(userId : Number, newProfile : Profile)
 }
